@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="GameProjectGitRepository:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="GameProjectGitRepository-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="GameProjectGitRepository:war exploded" />
+    </root>
+  </artifact>
+</component>

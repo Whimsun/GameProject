@@ -22,12 +22,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="GameProjectDomain" />
+        <module name="Gameprojectdomainfixed" />
         <module name="GameProjectGitRepository" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Gameprojectdomain" target="1.5" />
       <module name="GameProjectDomain" target="1.5" />
+      <module name="Gameprojectdomainfixed" target="1.5" />
       <module name="GameProjectGitRepository" target="1.5" />
     </bytecodeTargetLevel>
   </component>
