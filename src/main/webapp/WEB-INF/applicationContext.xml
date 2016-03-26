@@ -21,5 +21,10 @@
     p:password="${jdbc.password}" /-->
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
-
+    
+    <bean id="service" class="domain.ServiceFacade">
+        <constructor-arg>
+            <value>database</value>
+        </constructor-arg>
+    </bean>
 </beans>

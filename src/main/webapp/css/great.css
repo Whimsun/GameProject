@@ -1,0 +1,90 @@
+body {
+	font-family: helvetica;
+	font-size: 90%;
+	color: #303d11;
+	background-color: #7789c9;
+	background-image:url(FancyFilter.png);
+	margin-left:3%;
+}
+
+label{
+	display:block;
+}
+
+
+td{
+	padding:8px;
+	width:100px;
+	background-color:#ffffff;
+}
+
+tr th {
+	padding:8px;
+	background-color: #ca8a72;
+	font-weight:bold;
+	font-size:120%;
+	width:100px;
+}
+
+table{
+	margin:0px;
+	border-style: solid;
+	border-width:2px;
+	border-color: black;
+}
+
+#friendform{
+	display:none;
+}
+
+#container{
+	width:90%;
+	height:90%;
+}
+
+
+.blog{
+	width:200px;
+	height:350px;
+	border-style: solid;
+	border-width:2px;
+	border-color: black;
+	float:right;
+}
+
+.textwindow{
+	height:60%;
+	border-style: solid;
+	border-width:2px;
+	border-color: red;
+	margin:0;
+}
+
+.sendbutton{
+	float:right;
+}
+
+input{
+	margin:1.5px;
+}
+
+.errormessage{
+    background-color: red;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    width: 21.1%;
+}
+
+.notification{
+    background-color: white;
+    border-radius: 20px;
+    width:80%;
+}
+
+article{
+    background-color: white;
+}
+
+
+
