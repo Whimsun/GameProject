@@ -53,7 +53,12 @@ public class GameController {
     
     @RequestMapping(value="/detailed/{id}",method=RequestMethod.GET)
     public ModelAndView showReviews(@PathVariable int id){
-        return new ModelAndView("gamereviews","game",service.getGame(id));
+        Game game=service.getGame(id);
+        Double score=game.getAverageScore();
+        ModelAndView mav=new ModelAndView("gamereviews");
+        mav.addObject("game",game);
+        mav.addObject("score",score);
+        return mav;
     }
     
     @RequestMapping(value="/detailed/{id}",method=RequestMethod.POST)
@@ -74,7 +79,7 @@ public class GameController {
     
     @RequestMapping(value = "/remove/{id}" , method=RequestMethod.GET)
     public ModelAndView removeGame(@PathVariable int id){
-        return new ModelAndView("removegame");
+        return new ModelAndView("removegame","game",service.getGame(id));
     }
     
     @RequestMapping(value="/remove", method=RequestMethod.POST)
@@ -88,6 +93,14 @@ public class GameController {
     public String editConfirm(@ModelAttribute ("game") Game game){
         service.updateGame(game);
         return "redirect:/game.htm";
+    }
+    
+    @RequestMapping(value="/detailed/{id}/{revid}")
+    public ModelAndView removeReview(@PathVariable int id,@PathVariable int revid){
+        Game game=service.getGame(id);
+        Review review=service.getReview(revid);
+        game.removeReview(review);
+        return new ModelAndView("gamereviews","game",service.getGame(id));
     }
     
 }

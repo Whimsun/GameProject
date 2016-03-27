@@ -19,8 +19,10 @@
         <form method="get" action="<c:url value="/game/addreview/${game.gameID}.htm"/>">
             <input type="submit" value="Add new Review" />
         </form>
+            <p>Average score:   <c:out value="${score}"/></p>
         <c:forEach var="review" items="${reviews}">
             <article>
+                <p><a href="${game.gameID}/${review.reviewID}.htm"/>Remove</a></p>
                 <p>${review.reviewerName}</p>
                 <p>${review.score}</p>
                 <p>${review.body}</p>
