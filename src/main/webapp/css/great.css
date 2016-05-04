@@ -1,7 +1,7 @@
 body {
 	font-family: helvetica;
-	font-size: 90%;
-	color: #303d11;
+	font-size: 95%;
+        color:black;
 	background-color: #7789c9;
 	background-image:url(FancyFilter.png);
 	margin-left:3%;
@@ -22,7 +22,7 @@ tr th {
 	padding:8px;
 	background-color: #ca8a72;
 	font-weight:bold;
-	font-size:120%;
+	font-size:125%;
 	width:100px;
 }
 
@@ -77,13 +77,18 @@ input{
 }
 
 .notification{
-    background-color: white;
-    border-radius: 20px;
-    width:80%;
+    background-color: #E74242;
+    border-radius: 15px;
+    width:40%;
+    padding:7px;
 }
 
 article{
     background-color: white;
+}
+
+div form{
+    display:inline-block;
 }
 
 

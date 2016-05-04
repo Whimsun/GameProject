@@ -17,7 +17,7 @@
 
     <body>
                 <form method="GET" action="<c:url value="game/new.htm"/>">
-                    <input type="submit" value="Add New Game">
+                    <input type="submit" value="<spring:message code="lbl.AddNewGame"/>">
                 </form>
         <table>
             <tr>
@@ -33,7 +33,7 @@
                     <tr>
                         <td>${game.name}</td>
                         <td>${game.genre}</td>
-                        <td>${fn:length(reviews)} reviews <a href="<c:url value="game/detailed/${game.gameID}.htm"/>"><br> View All</a></td>
+                        <td>${fn:length(reviews)} reviews <a href="<c:url value="game/detailed/${game.gameID}.htm"/>"><br><spring:message code="lbl.MoreDetails"/></a></td>
                         <td><a href="<c:url value="game/edit/${game.gameID}.htm"/>"><spring:message code="lbl.Edit"/></a></td>
                         <td><a href="<c:url value="game/remove/${game.gameID}.htm"/>"/><spring:message code="lbl.Remove"/></td>
                     </tr>

@@ -15,11 +15,15 @@
         <jsp:include page="navigation.jsp"/>
     </head>
     <body>
+        <h1>${game.name}</h1>
         <c:set var="reviews" value="${game.reviews}"/>
         <form method="get" action="<c:url value="/game/addreview/${game.gameID}.htm"/>">
             <input type="submit" value="Add new Review" />
         </form>
-            <p>Average score:   <c:out value="${score}"/></p>
+        <form method="get" action="<c:url value="/game/detailed/info/${game.gameID}.htm"/>">
+            <input type="submit" value="Get Detailed Info">
+        </form>
+        <p>Average score:   <c:out value="${score}"/></p>
         <c:forEach var="review" items="${reviews}">
             <article>
                 <p><a href="${game.gameID}/${review.reviewID}.htm"/>Remove</a></p>

@@ -6,6 +6,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,8 +17,11 @@
     <jsp:include page="navigation.jsp"/>
     </head>
     <body>
-        <p class="notification">You are about to Delete ${game.name}</p>
+        <div class="notification">
+        <p><spring:message code="lbl.AboutToDelete"/> ${game.name}</p>
+        </div>
         <p>Are you sure?</p>
+        <div>
         <form action="<c:url value="/game/remove.htm"/>" method="post"/>
             <input type="hidden" value="${game.gameID}" id="id" name="id"/>
             <input type="submit" value="Yes"/>
@@ -25,5 +29,6 @@
             <form action="<c:url value="/game.htm"/>">
                 <input type="submit" value="No"/>
             </form>
+        </div>
     </body>
 </html>

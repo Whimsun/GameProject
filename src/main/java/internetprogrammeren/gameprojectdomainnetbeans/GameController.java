@@ -61,9 +61,22 @@ public class GameController {
         return mav;
     }
     
+    @RequestMapping(value="/detailed/info/{id}",method=RequestMethod.GET)
+    public ModelAndView externalReviews(@PathVariable int id){
+        Game game=service.getGame(id);
+        String URL="http://www.giantbomb.com/api/games?api_key=200692c5077c419fa32d4e3f149648ade91d5f4c&format=json&limit=1&field_list=description&filter=name:";
+        URL+=game.getName();
+        RestGiantBomb giantBombGame=new RestGiantBomb(URL);
+        // GIANTBOMB API KEY    200692c5077c419fa32d4e3f149648ade91d5f4c
+        ModelAndView mav=new ModelAndView("gameinfo","result",giantBombGame.getData());
+        mav.addObject(game);
+        return mav;
+    }
+    
     @RequestMapping(value="/detailed/{id}",method=RequestMethod.POST)
     public ModelAndView SubmitReviews(@ModelAttribute ("review") Review review ,@PathVariable int id){
-        service.getGame(id).addReview(review);
+        review.setGame(service.getGame(id));
+        service.addReview(review);
         return new ModelAndView("gamereviews","game",service.getGame(id));
     }
     
