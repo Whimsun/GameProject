@@ -23,33 +23,33 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class GameWebTest {
     private WebDriver driver;
     
-    @Test
-    public void test_Game_is_added_after_correct_input(){
-        driver=new FirefoxDriver();
-        String URL="http://localhost:8080/GameProjectGitAttempt2/game/new.htm?";
-        driver.get(URL);
-        WebElement nameField=driver.findElement(By.id("name"));
-        WebElement genreField=driver.findElement(By.id("genre"));
-        WebElement submitButton=driver.findElement(By.id("submitButton"));
-        
-        nameField.clear();
-        genreField.clear();
-        
-        nameField.sendKeys("TheMostAwesomeGameEverToBeTested");
-        genreField.sendKeys("TheMostAwesomeGenreEverToBeTested");
-        submitButton.click();
-        assertTrue(hasGameWithId("TheMostAwesomeGameEverToBeTested"));
-    }
-    
-    public boolean hasGameWithId(String gameName){
-		List<WebElement> allTableElements = driver.findElements(By.cssSelector("tr td"));
-		for(WebElement e:allTableElements){
-			if(e.getText().equals(gameName)){
-				return true;
-			}
-		}
-		return false;
-		
-	}
+//    @Test
+//    public void test_Game_is_added_after_correct_input(){
+//        driver=new FirefoxDriver();
+//        String URL="http://localhost:8080/GameProjectGitAttempt2/game/new.htm?";
+//        driver.get(URL);
+//        WebElement nameField=driver.findElement(By.id("name"));
+//        WebElement genreField=driver.findElement(By.id("genre"));
+//        WebElement submitButton=driver.findElement(By.id("submitButton"));
+//        
+//        nameField.clear();
+//        genreField.clear();
+//        
+//        nameField.sendKeys("TheMostAwesomeGameEverToBeTested");
+//        genreField.sendKeys("TheMostAwesomeGenreEverToBeTested");
+//        submitButton.click();
+//        assertTrue(hasGameWithId("TheMostAwesomeGameEverToBeTested"));
+//    }
+//    
+//    public boolean hasGameWithId(String gameName){
+//		List<WebElement> allTableElements = driver.findElements(By.cssSelector("tr td"));
+//		for(WebElement e:allTableElements){
+//			if(e.getText().equals(gameName)){
+//				return true;
+//			}
+//		}
+//		return false;
+//		
+//	}
 
 }
