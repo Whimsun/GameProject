@@ -33,7 +33,7 @@
                     <tr>
                         <td>${game.name}</td>
                         <td>${game.genre}</td>
-                        <td>${fn:length(reviews)} reviews <a href="<c:url value="game/detailed/${game.gameID}.htm"/>"><br><spring:message code="lbl.MoreDetails"/></a></td>
+                        <td>${fn:length(reviews)} <spring:message code="lbl.Reviews"/> <a href="<c:url value="game/detailed/${game.gameID}.htm"/>"><br><spring:message code="lbl.MoreDetails"/></a></td>
                         <td><a href="<c:url value="game/edit/${game.gameID}.htm"/>"><spring:message code="lbl.Edit"/></a></td>
                         <td><a href="<c:url value="game/remove/${game.gameID}.htm"/>"/><spring:message code="lbl.Remove"/></td>
                     </tr>

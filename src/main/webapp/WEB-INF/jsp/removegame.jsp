@@ -11,23 +11,23 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>JSP</title>
             <jsp:include page="header.jsp"/>
-    <title>Remove Game</title>
+            <title><spring:message code="lbl.RemoveGame"/></title>
     <jsp:include page="navigation.jsp"/>
     </head>
     <body>
         <div class="notification">
         <p><spring:message code="lbl.AboutToDelete"/> ${game.name}</p>
         </div>
-        <p>Are you sure?</p>
+        <p><spring:message code="lbl.AreYouSure"/></p>
         <div>
         <form action="<c:url value="/game/remove.htm"/>" method="post"/>
             <input type="hidden" value="${game.gameID}" id="id" name="id"/>
-            <input type="submit" value="Yes"/>
+            <input type="submit" value="<spring:message code="lbl.Yes"/>"  />
         </form>
             <form action="<c:url value="/game.htm"/>">
-                <input type="submit" value="No"/>
+                <input type="submit" value="<spring:message code="lbl.No"/>"/>
             </form>
         </div>
     </body>

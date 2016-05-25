@@ -22,7 +22,7 @@
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
     
-    <bean id="service" class="domain.ServiceFacade">
+    <bean id="service" class="domain.ServiceFacade" destroy-method="destroy">
         <constructor-arg>
             <value>database</value>
         </constructor-arg>

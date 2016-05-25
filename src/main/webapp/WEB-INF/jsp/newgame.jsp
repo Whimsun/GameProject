@@ -18,6 +18,10 @@
         <title>New Game Form</title>
     </head>
     <body>
+        <script>
+            errorname="<spring:message code="lbl.ErrorMessageName"/>";
+            errorgenre="<spring:message code="lbl.ErrorMessageGenre"/>";
+        </script>
         <div class="errormessage" id="errorjs"></div>
         
         <c:if test="${error!=null}">

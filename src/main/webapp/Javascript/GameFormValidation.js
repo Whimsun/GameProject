@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 
-
+    var errorname;
+    var errorgenre;
 function validateForm(){
     var errorcount=0;
     var errors=document.getElementById("errorjs");
@@ -13,11 +14,11 @@ function validateForm(){
     var genrefield=document.getElementById("genre");
     var genre=genrefield.value;
     if(name===null||name===""){
-        errors.innerHTML="The Name you have given is empty <br>";
+        errors.innerHTML=errorname+"<br>";
         errorcount++;
     }
     if(genre===null||genre===""){
-        errors.innerHTML+="The Genre you have given is empty";
+        errors.innerHTML+=errorgenre;
         errorcount++;
     }
     if(errorcount>0){

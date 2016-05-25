@@ -5,6 +5,7 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,8 +14,7 @@
     <jsp:include page="navigation.jsp"/>
     </head>
     <body>
-        <h1>Edit Page</h1>
-        <h2>You are editing: ${game.name}</h2>
+        <h2><spring:message code="lbl.YouAreEditing"/>: ${game.name}</h2>
         
         <form method="POST" action="<c:url value="/game/confirmedit.htm"/>">
             <input type="hidden" name="gameID" id="gameID" value="${game.gameID}">
