@@ -7,4 +7,6 @@
     <jsp:include page="header.jsp"></jsp:include>
     <title>INDEX</title>
     <jsp:include page="navigation.jsp"/>
+    
+    <p><spring:message code="lbl.WelcomeMessage"/></p>
 </html>
